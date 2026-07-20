@@ -3,7 +3,6 @@ import { faqItems } from "@/data/faqs";
 import { createMetadata, faqSchema, organizationSchema, websiteSchema } from "@/lib/seo";
 import { BenefitsSection } from "@/components/marketing/BenefitsSection";
 import { CTASection } from "@/components/marketing/CTASection";
-import { DashboardShowcaseSection } from "@/components/marketing/DashboardShowcaseSection";
 import { DecisionPressureSection } from "@/components/marketing/DecisionPressureSection";
 import { DifferentiatorsSection } from "@/components/marketing/DifferentiatorsSection";
 import { DiagnosticExplorer } from "@/components/marketing/DiagnosticExplorer";
@@ -15,7 +14,9 @@ import { ProblemSection } from "@/components/marketing/ProblemSection";
 import { ProcessSection } from "@/components/marketing/ProcessSection";
 import { SegmentsSection } from "@/components/marketing/SegmentsSection";
 import { SolutionsSection } from "@/components/marketing/SolutionsSection";
+import { TechnologyContrastSection } from "@/components/marketing/TechnologyContrastSection";
 import { TechnologyPortfolioSection } from "@/components/marketing/TechnologyPortfolioSection";
+import { TrustBar } from "@/components/marketing/TrustBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = createMetadata({
@@ -29,14 +30,15 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <TrustBar />
       <TechnologyPortfolioSection />
+      <TechnologyContrastSection />
       <DecisionPressureSection />
       <ProblemSection />
       <DiagnosticExplorer />
       <JourneySection />
       <SolutionsSection limit={6} />
       <BenefitsSection />
-      <DashboardShowcaseSection />
       <SegmentsSection limit={6} />
       <ProcessSection />
       <IntegrationsSection />

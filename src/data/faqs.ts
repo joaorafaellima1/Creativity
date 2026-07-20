@@ -7,6 +7,21 @@ export const faqItems: FaqItem[] = [
       "Business Intelligence é o uso organizado de dados para acompanhar indicadores, enxergar padrões, comparar resultados e apoiar decisões com mais clareza.",
   },
   {
+    question: "A Creativity trabalha com licenciamento Microsoft?",
+    answer:
+      "Sim. A Creativity atende demandas de licenciamento Microsoft para produtividade, colaboração, nuvem, segurança, dados e aplicações empresariais. A recomendação depende do cenário e é confirmada em proposta.",
+  },
+  {
+    question: "Posso solicitar equipamentos e outras soluções de tecnologia?",
+    answer:
+      "Sim. Por meio do ecossistema Ingram Micro, a Creativity pode consultar soluções de computação, servidores, armazenamento, redes, segurança, cloud, software, colaboração e periféricos, conforme disponibilidade.",
+  },
+  {
+    question: "A Creativity atende empresas de quais segmentos?",
+    answer:
+      "As soluções atendem pequenas e médias empresas de agronegócio, distribuição, indústria, varejo, atacado, serviços e operações com múltiplas unidades.",
+  },
+  {
     question: "Minha empresa precisa trocar de sistema?",
     answer:
       "Não necessariamente. O objetivo é aproveitar os dados que já existem em ERPs, planilhas, bancos de dados e outros sistemas, avaliando a melhor forma de integração.",
@@ -37,11 +52,6 @@ export const faqItems: FaqItem[] = [
       "Sim. O projeto pode prever perfis de acesso para que cada pessoa visualize apenas as informações adequadas à sua função.",
   },
   {
-    question: "A Creativity atende empresas de quais segmentos?",
-    answer:
-      "As soluções atendem pequenas e médias empresas de agronegócio, distribuição, indústria, varejo, atacado, serviços e operações com múltiplas unidades.",
-  },
-  {
     question: "Como funciona o processo de implantação?",
     answer:
       "A implantação passa por diagnóstico, mapeamento, protótipo, desenvolvimento, publicação, treinamento e evolução contínua.",
@@ -60,15 +70,5 @@ export const faqItems: FaqItem[] = [
     question: "Como solicitar uma demonstração?",
     answer:
       "Você pode usar o formulário de contato ou o WhatsApp para solicitar uma conversa inicial e um diagnóstico dos dados da empresa.",
-  },
-  {
-    question: "A Creativity trabalha com licenciamento Microsoft?",
-    answer:
-      "Sim. A Creativity atende demandas de licenciamento Microsoft para produtividade, colaboração, nuvem, segurança, dados e aplicações empresariais. A recomendação depende do cenário e é confirmada em proposta.",
-  },
-  {
-    question: "Posso solicitar equipamentos e outras soluções de tecnologia?",
-    answer:
-      "Sim. Por meio do ecossistema Ingram Micro, a Creativity pode consultar soluções de computação, servidores, armazenamento, redes, segurança, cloud, software, colaboração e periféricos, conforme disponibilidade.",
   },
 ];

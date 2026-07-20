@@ -24,8 +24,15 @@ export function DashboardPreview({ dashboard, compact = false, className = "" }:
             <h3 className="mt-1 text-xl font-semibold text-slate-950">{dashboard.title}</h3>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">{dashboard.description}</p>
           </div>
-          <span className="inline-flex w-fit shrink-0 rounded-md border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-semibold leading-5 text-amber-800 sm:whitespace-nowrap">
-            Dados demonstrativos
+          <span
+            className={`inline-flex w-fit shrink-0 items-center gap-2 rounded-md border text-xs font-bold leading-5 sm:whitespace-nowrap ${
+              compact
+                ? "border-amber-300 bg-amber-100 px-3 py-2 text-amber-950 shadow-sm"
+                : "border-amber-200 bg-amber-50 px-3 py-1 text-amber-800"
+            }`}
+          >
+            <AlertTriangle aria-hidden className="h-4 w-4" />
+            Dados 100% demonstrativos
           </span>
         </div>
       </div>

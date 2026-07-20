@@ -54,10 +54,10 @@ export function Header() {
       className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/95 shadow-sm shadow-slate-950/20 backdrop-blur"
       onMouseLeave={() => setActiveMenu(null)}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Logo priority />
 
-        <nav aria-label="Menu principal" className="hidden items-center gap-1 min-[1160px]:flex">
+        <nav aria-label="Menu principal" className="hidden items-center min-[1120px]:flex">
           <Link className="nav-link nav-link-dark" href="/">
             Início
           </Link>
@@ -92,15 +92,15 @@ export function Header() {
           <Link className="nav-link nav-link-dark" href="/calculadora">
             Calculadora
           </Link>
+          <Link className="nav-link nav-link-dark" href="/sobre">
+            Sobre
+          </Link>
           <Link className="nav-link nav-link-dark" href="/contato">
             Contato
           </Link>
         </nav>
 
-        <div className="hidden items-center gap-3 min-[1160px]:flex">
-          <Link className="text-sm font-semibold text-slate-200 hover:text-cyan-200" href="/calculadora">
-            Calcular investimento
-          </Link>
+        <div className="hidden items-center min-[1380px]:flex">
           <ButtonLink
             external
             href={whatsappUrl}
@@ -114,7 +114,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400 min-[1160px]:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400 min-[1120px]:hidden"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -126,7 +126,7 @@ export function Header() {
       {activeMenu ? <MegaMenu activeMenu={activeMenu} onClose={() => setActiveMenu(null)} /> : null}
 
       {open ? (
-        <div className="fixed inset-x-0 top-20 z-40 max-h-[calc(100vh-5rem)] overflow-y-auto border-b border-slate-200 bg-white px-4 py-5 shadow-xl min-[1160px]:hidden">
+        <div className="fixed inset-x-0 top-20 z-40 max-h-[calc(100vh-5rem)] overflow-y-auto border-b border-slate-200 bg-white px-4 py-5 shadow-xl min-[1120px]:hidden">
           <nav aria-label="Menu mobile" className="grid gap-5">
             <div className="grid gap-2">
               {[
@@ -207,7 +207,7 @@ function MegaMenu({ activeMenu, onClose }: { activeMenu: Exclude<ActiveMenu, nul
   const items = isSolutions ? featuredSolutions : featuredSegments;
 
   return (
-    <div className="absolute inset-x-0 top-20 hidden border-b border-slate-200 bg-white shadow-xl min-[1160px]:block">
+    <div className="absolute inset-x-0 top-20 hidden border-b border-slate-200 bg-white shadow-xl min-[1120px]:block">
       <div className="mx-auto grid max-w-7xl gap-8 px-8 py-7 lg:grid-cols-[0.85fr_1.15fr]">
         <div className="rounded-lg bg-slate-950 p-6 text-white">
           <p className="text-sm font-semibold uppercase text-cyan-200">

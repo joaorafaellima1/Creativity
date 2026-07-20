@@ -5,10 +5,10 @@ import { ButtonLink } from "@/components/ui/ButtonLink";
 import { DashboardPreview } from "@/components/dashboards/DashboardPreview";
 
 const valueBadges = [
-  "Especialistas em dados e BI",
-  "Licenciamento Microsoft",
-  "Cloud, segurança e infraestrutura",
-  "Atendimento consultivo",
+  "Business Intelligence e dashboards em Power BI",
+  "Microsoft 365, Azure, Copilot e Power Platform",
+  "Infraestrutura Dell, Lenovo e ecossistema Ingram Micro",
+  "Atendimento consultivo, do diagnóstico à evolução",
 ];
 
 export function Hero() {
@@ -20,14 +20,15 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-8">
         <div>
           <p className="text-sm font-semibold uppercase text-cyan-200">
-            Dados, Microsoft e infraestrutura
+            Business Intelligence, Microsoft e infraestrutura
           </p>
-          <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-white md:text-6xl">
-            Tecnologia que conecta gestão, produtividade e crescimento.
+          <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight text-white md:text-5xl">
+            Business Intelligence, licenciamento Microsoft e infraestrutura em um só parceiro.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-            A Creativity une Business Intelligence, licenciamento Microsoft e um amplo portfólio
-            de tecnologia para resolver necessidades reais da sua empresa.
+            Ajudamos pequenas e médias empresas de agronegócio, distribuição, indústria, varejo e
+            serviços a organizar dados, licenciar software e equipar a operação com um único ponto
+            de contato.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink
@@ -39,8 +40,8 @@ export function Hero() {
             >
               Falar com um especialista
             </ButtonLink>
-            <ButtonLink href="/solucoes" variant="dark" eventName="hero_solutions_click">
-              Explorar soluções
+            <ButtonLink href="/tecnologia" variant="dark" eventName="hero_solutions_click">
+              Conhecer as três frentes
             </ButtonLink>
           </div>
           <ul className="mt-8 grid gap-3 text-sm text-slate-200 sm:grid-cols-2">
