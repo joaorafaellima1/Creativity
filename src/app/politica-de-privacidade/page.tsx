@@ -1,64 +1,19 @@
 import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { company } from "@/config/company";
 import { createMetadata } from "@/lib/seo";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
-export const metadata: Metadata = createMetadata({
-  title: "Política de Privacidade",
-  description:
-    "Base institucional de Política de Privacidade da Creativity Tecnologia, preparada para validação jurídica antes da publicação final.",
-  path: "/politica-de-privacidade",
-});
+export const metadata: Metadata = createMetadata({ title: "Política de Privacidade", description: "Saiba como a Creativity trata dados pessoais enviados pelos canais do site.", path: "/politica-de-privacidade" });
+const sections = [
+  ["1. Controladora", `A ${company.legalName}, marca ${company.brandName}, é responsável pelos dados pessoais enviados voluntariamente pelos visitantes nos canais deste site.`],
+  ["2. Dados tratados", "O formulário pode tratar nome, empresa, e-mail, telefone, porte, interesse, desafio informado e parâmetros de origem da visita. O diagnóstico e a calculadora permanecem no navegador, salvo quando o visitante decide compartilhar o resultado."],
+  ["3. Finalidades", "Os dados são usados para responder solicitações, entender o contexto comercial, organizar a conversa inicial, acompanhar a origem do contato e cumprir obrigações aplicáveis."],
+  ["4. Base e consentimento", "O envio do formulário depende de consentimento explícito. O visitante pode optar pelo WhatsApp, sujeito às políticas da plataforma."],
+  ["5. Compartilhamento", "Dados podem ser processados por fornecedores de hospedagem, formulário, comunicação e medição estritamente necessários à operação. Não há venda de dados pessoais."],
+  ["6. Cookies e analytics", "Cookies essenciais mantêm preferências do site. Ferramentas de analytics somente são carregadas após autorização, conforme a Política de Cookies."],
+  ["7. Segurança e retenção", "A Creativity deve adotar controles compatíveis com o risco e manter os dados somente pelo tempo necessário às finalidades, obrigações legais e defesa de direitos."],
+  ["8. Direitos do titular", `Solicitações de acesso, correção, informação, oposição ou exclusão podem ser encaminhadas para ${company.email}. O atendimento observará a legislação aplicável.`],
+];
+export default function PrivacyPage() { return <LegalPage title="Política de Privacidade" eyebrow="LGPD e privacidade" sections={sections} />; }
+function LegalPage({ title, eyebrow, sections }: { title: string; eyebrow: string; sections: string[][] }) { return <section className="bg-white py-16 md:py-24"><div className="mx-auto max-w-4xl px-5 sm:px-8"><Breadcrumbs items={[{ label: title }]} /><p className="mt-8 text-sm font-semibold uppercase text-blue-600">{eyebrow}</p><h1 className="mt-4 text-4xl font-semibold text-neutral-950">{title}</h1><p className="mt-5 rounded-md border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900">Texto-base sujeito à validação jurídica antes da publicação definitiva.</p><div className="mt-10 grid gap-9">{sections.map(([heading, content]) => <section key={heading}><h2 className="text-2xl font-semibold text-neutral-950">{heading}</h2><p className="mt-3 text-base leading-8 text-neutral-700">{content}</p></section>)}</div></div></section>; }
 
-export default function PrivacyPage() {
-  return (
-    <section className="bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <Breadcrumbs items={[{ label: "Política de Privacidade" }]} />
-        <p className="text-sm font-semibold uppercase text-cyan-700">LGPD e privacidade</p>
-        <h1 className="mt-4 text-4xl font-semibold text-slate-950">Política de Privacidade</h1>
-        <p className="mt-5 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm leading-6 text-amber-900">
-          Este texto é uma base institucional e deve ser validado pela empresa ou assessoria jurídica
-          antes da publicação em produção.
-        </p>
-        <div className="mt-8 grid gap-6 text-base leading-8 text-slate-700 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-slate-950">
-          <h2>1. Controladora</h2>
-          <p>
-            A {company.legalName}, marca {company.brandName}, pode tratar dados pessoais fornecidos
-            voluntariamente por visitantes que solicitam contato, demonstração ou diagnóstico.
-          </p>
-          <h2>2. Dados coletados</h2>
-          <p>
-            O formulário pode coletar nome, empresa, cargo, telefone, e-mail, segmento, número aproximado
-            de colaboradores, sistema utilizado, principal necessidade e mensagem.
-          </p>
-          <h2>3. Finalidades</h2>
-          <p>
-            Os dados são usados para responder solicitações, entender necessidades comerciais, preparar
-            diagnóstico inicial e viabilizar comunicação sobre soluções de Business Intelligence.
-          </p>
-          <h2>4. Cookies e analytics</h2>
-          <p>
-            O site possui aviso simples de cookies e estrutura preparada para ferramentas de análise,
-            tagueamento e eventos de conversão, que devem ser ativados com consentimento e configuração adequada.
-          </p>
-          <h2>5. Compartilhamento</h2>
-          <p>
-            Dados podem ser compartilhados com fornecedores técnicos apenas quando necessário para operação
-            do site, hospedagem, recebimento de formulários ou atendimento ao titular.
-          </p>
-          <h2>6. Direitos do titular</h2>
-          <p>
-            O titular pode solicitar acesso, correção, atualização ou eliminação de dados, conforme a legislação
-            aplicável e os canais oficiais disponibilizados pela empresa.
-          </p>
-          <h2>7. Segurança</h2>
-          <p>
-            A Creativity deve adotar medidas técnicas e organizacionais compatíveis com o contexto do tratamento,
-            incluindo controle de acesso, cuidado com credenciais e revisão de integrações.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}

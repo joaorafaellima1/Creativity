@@ -10,6 +10,7 @@
     "hostinger:build": "next build",
     "hostinger:start": "next start -H 0.0.0.0",
     "lint": "eslint",
+    "test": "node --test tests/*.test.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

@@ -3,44 +3,34 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const storageKey = "creativity-cookie-consent";
+export const cookieStorageKey = "creativity-cookie-consent";
 
 export function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      setVisible(localStorage.getItem(storageKey) !== "accepted");
+      setVisible(!localStorage.getItem(cookieStorageKey));
     }, 0);
-
     return () => window.clearTimeout(timer);
   }, []);
 
-  if (!visible) {
-    return null;
+  function choose(value: "accepted" | "rejected") {
+    localStorage.setItem(cookieStorageKey, value);
+    window.dispatchEvent(new CustomEvent("creativity-consent-change", { detail: value }));
+    setVisible(false);
   }
 
+  if (!visible) return null;
+
   return (
-    <div className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-4xl rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+    <div className="fixed inset-x-4 bottom-4 z-50 mx-auto max-w-4xl rounded-lg border border-neutral-200 bg-white p-4 shadow-2xl" role="dialog" aria-label="Preferências de cookies">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <p className="text-sm leading-6 text-slate-700">
-          Usamos cookies essenciais e podemos preparar eventos de análise mediante configuração e
-          consentimento. Saiba mais na{" "}
-          <Link className="font-semibold text-cyan-700 hover:text-cyan-900" href="/politica-de-privacidade">
-            Política de Privacidade
-          </Link>
-          .
-        </p>
-        <button
-          className="min-h-11 rounded-lg bg-slate-950 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400"
-          type="button"
-          onClick={() => {
-            localStorage.setItem(storageKey, "accepted");
-            setVisible(false);
-          }}
-        >
-          Entendi
-        </button>
+        <p className="text-sm leading-6 text-neutral-700">Usamos cookies essenciais. Analytics só é ativado com sua autorização. Veja a <Link className="font-semibold text-blue-700 underline" href="/politica-de-cookies">Política de Cookies</Link>.</p>
+        <div className="flex shrink-0 gap-2">
+          <button className="min-h-11 rounded-md border border-neutral-300 px-4 py-2 text-sm font-semibold text-neutral-800 hover:bg-neutral-100" type="button" onClick={() => choose("rejected")}>Somente essenciais</button>
+          <button className="min-h-11 rounded-md bg-neutral-950 px-4 py-2 text-sm font-semibold text-white hover:bg-neutral-800" type="button" onClick={() => choose("accepted")}>Aceitar analytics</button>
+        </div>
       </div>
     </div>
   );

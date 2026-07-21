@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowLeft, Search } from "lucide-react";
+export default function NotFound() { return <section className="grid min-h-[70svh] place-items-center bg-neutral-950 px-5 py-20 text-white"><div className="max-w-2xl text-center"><Search className="mx-auto h-10 w-10 text-teal-300" aria-hidden /><p className="mt-7 text-sm font-semibold uppercase text-teal-300">Erro 404</p><h1 className="mt-4 text-4xl font-semibold sm:text-5xl">Esta página não está disponível.</h1><p className="mt-5 text-base leading-7 text-neutral-400">O endereço pode ter mudado. Volte ao início para continuar conhecendo as soluções da Creativity.</p><Link className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-semibold text-neutral-950" href="/"><ArrowLeft className="h-4 w-4" /> Voltar ao início</Link></div></section>; }
+

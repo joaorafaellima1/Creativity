@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next";
+export default function manifest(): MetadataRoute.Manifest { return { name: "Creativity Tecnologia", short_name: "Creativity", description: "Da infraestrutura à inteligência. Tecnologia que transforma operação em resultado.", start_url: "/", display: "standalone", background_color: "#ffffff", theme_color: "#0b5cff", lang: "pt-BR", icons: [{ src: "/favicon.ico", sizes: "any", type: "image/x-icon" }] }; }

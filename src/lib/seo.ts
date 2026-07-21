@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { company } from "@/config/company";
 import { absoluteUrl } from "@/lib/format";
 import type { FaqItem } from "@/types/content";
+import type { Article } from "@/data/articles";
 
 type MetadataInput = {
   title: string;
@@ -38,7 +39,7 @@ export function createMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${company.brandName} - BI e Copilot para empresas que usam Microsoft`,
+          alt: `${company.brandName} - da infraestrutura à inteligência`,
         },
       ],
     },
@@ -70,6 +71,41 @@ export function websiteSchema() {
     name: company.brandName,
     url: company.siteUrl,
     inLanguage: "pt-BR",
+  };
+}
+
+export function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: company.brandName,
+    legalName: company.legalName,
+    url: company.siteUrl,
+    telephone: company.phoneDisplay,
+    email: company.email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: company.city,
+      addressRegion: company.state,
+      addressCountry: "BR",
+    },
+    areaServed: "BR",
+    description: company.description,
+  };
+}
+
+export function articleSchema(article: Article) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    inLanguage: "pt-BR",
+    mainEntityOfPage: absoluteUrl(`/conteudos/${article.slug}`),
+    author: { "@type": "Organization", name: company.brandName },
+    publisher: { "@type": "Organization", name: company.brandName },
   };
 }
 
