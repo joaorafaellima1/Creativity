@@ -13,12 +13,12 @@ export const metadata: Metadata = createMetadata({
 
 export default function ContactPage() {
   return (
-    <section className="bg-slate-100 py-16 md:py-20">
+    <section className="bg-[#f3f3f0] py-16 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
         <div>
           <Breadcrumbs items={[{ label: "Contato" }]} />
-          <p className="text-sm font-semibold uppercase text-teal-700">Contato</p>
-          <h1 className="mt-4 text-4xl font-semibold leading-tight text-[#071827] sm:text-5xl">
+          <p className="text-sm font-semibold uppercase text-blue-600">Contato</p>
+          <h1 className="mt-4 text-4xl font-semibold leading-tight text-black sm:text-5xl">
             Comece pela decisão que sua empresa precisa melhorar.
           </h1>
           <p className="mt-5 text-lg leading-8 text-slate-600">
@@ -26,7 +26,7 @@ export default function ContactPage() {
             cenário e indicar um próximo passo objetivo.
           </p>
           <a
-            className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-lg border border-teal-200 bg-teal-50 px-4 py-3 text-sm font-semibold text-teal-900 hover:bg-teal-100"
+            className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-full border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-semibold text-blue-900 hover:bg-blue-100"
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"

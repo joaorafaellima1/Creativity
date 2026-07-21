@@ -44,12 +44,12 @@ const services = [
 export default function SolutionsPage() {
   return (
     <>
-      <section className="bg-[#071827] py-16 text-white md:py-20">
+      <section className="bg-[#0a0a0a] py-20 text-white md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="[&_a]:text-slate-300 [&_span]:text-slate-300">
             <Breadcrumbs items={[{ label: "Soluções" }]} />
           </div>
-          <p className="text-sm font-semibold uppercase text-teal-300">Soluções</p>
+          <p className="text-sm font-semibold uppercase text-cyan-300">Soluções</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl">
             Dados e Microsoft trabalhando para a mesma decisão.
           </h1>
@@ -60,21 +60,21 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
+      <section className="bg-white py-16 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
             {services.map((service) => {
               const Icon = service.icon;
               return (
-                <article className="border-t-2 border-teal-500 pt-7" key={service.eyebrow}>
-                  <Icon aria-hidden className="h-6 w-6 text-teal-700" />
-                  <p className="mt-6 text-sm font-semibold uppercase text-teal-700">{service.eyebrow}</p>
-                  <h2 className="mt-3 text-3xl font-semibold text-[#071827]">{service.title}</h2>
+                <article className="border-t-2 border-blue-600 pt-7" key={service.eyebrow}>
+                  <Icon aria-hidden className="h-6 w-6 text-blue-600" />
+                  <p className="mt-6 text-sm font-semibold uppercase text-blue-600">{service.eyebrow}</p>
+                  <h2 className="mt-3 text-3xl font-semibold text-black">{service.title}</h2>
                   <p className="mt-5 text-base leading-8 text-slate-600">{service.description}</p>
                   <ul className="mt-7 grid gap-3 text-sm font-medium text-slate-700">
                     {service.items.map((item) => (
                       <li className="flex gap-3" key={item}>
-                        <CheckCircle2 aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-teal-700" />
+                        <CheckCircle2 aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-blue-600" />
                         {item}
                       </li>
                     ))}
@@ -86,10 +86,10 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="bg-slate-100 py-16 md:py-20" id="como-funciona">
+      <section className="bg-[#f3f3f0] py-16 md:py-24" id="como-funciona">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-semibold uppercase text-teal-700">Como trabalhamos</p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-[#071827] sm:text-4xl">
+          <p className="text-sm font-semibold uppercase text-blue-600">Como trabalhamos</p>
+          <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-black sm:text-4xl">
             Um caminho curto entre o problema e a adoção.
           </h2>
           <div className="mt-10 grid gap-8 md:grid-cols-3">
@@ -99,7 +99,7 @@ export default function SolutionsPage() {
               ["03", "Adoção", "Colocamos a solução na rotina, acompanhamos o uso e orientamos a evolução."],
             ].map(([number, title, description]) => (
               <div className="border-t border-slate-300 pt-5" key={number}>
-                <span className="text-sm font-semibold text-teal-700">{number}</span>
+                <span className="text-sm font-semibold text-blue-600">{number}</span>
                 <h3 className="mt-5 text-xl font-semibold text-slate-950">{title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
               </div>
@@ -122,14 +122,14 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="bg-[#071827] py-14 text-white">
+      <section className="bg-[#0b5cff] py-14 text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
           <div>
-            <p className="text-sm font-semibold uppercase text-teal-300">Primeiro passo</p>
+            <p className="text-sm font-semibold uppercase text-blue-100">Primeiro passo</p>
             <h2 className="mt-2 text-2xl font-semibold">Comece pela decisão que hoje chega tarde.</h2>
           </div>
           <Link
-            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-teal-300 px-5 py-3 text-sm font-semibold text-[#071827] hover:bg-teal-200"
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black hover:bg-neutral-200"
             href="/#contato"
           >
             Agendar diagnóstico gratuito

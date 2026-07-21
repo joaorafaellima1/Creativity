@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #10212f;
+  --foreground: #111111;
 }
 
 @theme inline {
@@ -16,6 +16,35 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.07);
+  }
+}
+
+@keyframes data-rise {
+  from {
+    opacity: 0.35;
+    transform: scaleY(0.55);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.hero-drift {
+  animation: hero-drift 18s ease-out both;
+}
+
+.data-rise {
+  animation: data-rise 700ms ease-out both;
+  transform-origin: bottom;
 }
 
 @layer components {
@@ -52,8 +81,8 @@ body {
 }
 
 ::selection {
-  background: #5eead4;
-  color: #071827;
+  background: #0b5cff;
+  color: #ffffff;
 }
 
 a,
