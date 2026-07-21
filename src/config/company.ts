@@ -1,9 +1,9 @@
 const whatsappMessage =
-  "Olá, conheci as soluções da Creativity e gostaria de falar sobre tecnologia para a minha empresa.";
+  "Olá, quero entender como a Creativity pode ativar BI, IA e Microsoft na minha empresa.";
 
 export const company = {
   legalName: "CREATIVITY TECNOLOGIA LTDA",
-  brandName: "Creativity Tecnologia",
+  brandName: "Creativity",
   domain: "creativity.eti.br",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://creativity.eti.br",
   phoneDisplay: "(43) 99121-2718",
@@ -13,9 +13,9 @@ export const company = {
   address: "",
   linkedin: "",
   instagram: "",
-  tagline: "Tecnologia para decidir, produzir e crescer.",
+  tagline: "Dado virando decisão no ecossistema Microsoft.",
   description:
-    "Business Intelligence, licenciamento Microsoft e soluções de cloud, segurança, infraestrutura e tecnologia para empresas.",
+    "BI, Copilot e IA aplicada para empresas que já usam Microsoft e querem transformar dados em decisões.",
 };
 
 export const whatsappUrl = `https://wa.me/${company.whatsappNumber}?text=${encodeURIComponent(
@@ -25,7 +25,6 @@ export const whatsappUrl = `https://wa.me/${company.whatsappNumber}?text=${encod
 export const pendingCompanyInfo = [
   "E-mail institucional para exibição e recebimento de contatos.",
   "Endereço físico ou cidade de atuação, caso deseje publicar.",
-  "Logotipo oficial em SVG ou PNG com fundo transparente.",
   "Perfis oficiais de redes sociais.",
   "Cases, depoimentos e clientes autorizados para publicação.",
   "Política jurídica final validada pela empresa ou assessoria jurídica.",

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 type LogoProps = {
@@ -6,21 +5,17 @@ type LogoProps = {
   priority?: boolean;
 };
 
-export function Logo({ className = "", priority = false }: LogoProps) {
+export function Logo({ className = "" }: LogoProps) {
   return (
     <Link
-      className="inline-flex shrink-0 items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400"
+      className={`inline-flex shrink-0 items-baseline gap-2 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-300 ${className}`}
       href="/"
-      aria-label="Página inicial da Creativity Tecnologia"
+      aria-label="Página inicial da Creativity"
     >
-      <Image
-        src="/brand/creativity-logo-official.png"
-        alt="Creativity Data Analytics"
-        width={629}
-        height={165}
-        priority={priority}
-        className={`block h-10 w-auto max-w-none shrink-0 object-contain sm:h-11 ${className}`}
-      />
+      <span className="text-2xl font-semibold">Creativity</span>
+      <span className="hidden text-[0.65rem] font-semibold uppercase text-teal-300 sm:inline">
+        data + AI
+      </span>
     </Link>
   );
 }

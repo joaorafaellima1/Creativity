@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #10212f;
 }
 
 @theme inline {
@@ -42,7 +42,7 @@ body {
   }
 
   .nav-link-dark {
-    color: #dbeafe;
+    color: #d8e4ea;
   }
 
   .nav-link-dark:hover {
@@ -52,8 +52,8 @@ body {
 }
 
 ::selection {
-  background: #67e8f9;
-  color: #0f172a;
+  background: #5eead4;
+  color: #071827;
 }
 
 a,

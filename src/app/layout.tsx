@@ -20,18 +20,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(company.siteUrl),
   title: {
-    default: "Tecnologia e Business Intelligence | Creativity Tecnologia",
-    template: "%s | Creativity Tecnologia",
+    default: "BI e Copilot para empresas que usam Microsoft | Creativity",
+    template: "%s | Creativity",
   },
   description:
-    "Business Intelligence, licenciamento Microsoft e soluções de cloud, segurança e infraestrutura para empresas.",
+    "A Creativity ativa BI, Copilot e IA aplicada no ecossistema Microsoft para transformar dados reais em decisões melhores.",
   applicationName: company.brandName,
   authors: [{ name: company.brandName }],
   creator: company.brandName,
   publisher: company.brandName,
   icons: {
-    icon: "/brand/creativity-symbol-official.png",
-    apple: "/brand/creativity-symbol-official.png",
+    icon: "/favicon.ico",
+    apple: "/favicon.ico",
   },
   formatDetection: {
     telephone: false,

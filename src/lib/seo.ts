@@ -14,7 +14,7 @@ export function createMetadata({
   title,
   description,
   path = "/",
-  image = "/opengraph-image",
+  image = "/og.png",
 }: MetadataInput): Metadata {
   const url = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
@@ -38,7 +38,7 @@ export function createMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${company.brandName} - tecnologia e Business Intelligence`,
+          alt: `${company.brandName} - BI e Copilot para empresas que usam Microsoft`,
         },
       ],
     },

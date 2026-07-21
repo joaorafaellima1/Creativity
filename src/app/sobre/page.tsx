@@ -1,97 +1,84 @@
 import type { Metadata } from "next";
-import { company } from "@/config/company";
-import { createMetadata } from "@/lib/seo";
-import { CTASection } from "@/components/marketing/CTASection";
-import { TrustBar } from "@/components/marketing/TrustBar";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-
-const values = [
-  {
-    name: "Clareza",
-    description:
-      "Indicadores com origem e regra de cálculo definidas, para que cada número tenha significado claro para quem decide.",
-  },
-  {
-    name: "Confiabilidade",
-    description:
-      "Dados tratados e validados antes de chegar ao painel, reduzindo conferências manuais e dúvidas sobre a informação.",
-  },
-  {
-    name: "Proximidade",
-    description:
-      "Acompanhamento consultivo da primeira conversa à evolução do projeto, com um time acessível para a rotina.",
-  },
-  {
-    name: "Evolução contínua",
-    description:
-      "Soluções que crescem com a empresa, incorporando novos usuários, indicadores, fontes de dados e necessidades.",
-  },
-  {
-    name: "Orientação a resultados",
-    description:
-      "Cada recomendação parte de uma necessidade real do negócio, seja para decidir, produzir, proteger ou crescer.",
-  },
-  {
-    name: "Segurança da informação",
-    description:
-      "Controle de acesso e boas práticas de proteção considerados do armazenamento à visualização e ao uso diário.",
-  },
-];
+import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Sobre a Creativity Tecnologia",
+  title: "Sobre a Creativity",
   description:
-    "Conheça a Creativity Tecnologia, empresa de Business Intelligence, licenciamento Microsoft, cloud e infraestrutura.",
+    "Conheça a Creativity, consultoria brasileira de BI, IA aplicada e adoção Microsoft para empresas.",
   path: "/sobre",
 });
+
+const principles = [
+  ["Pergunta antes da ferramenta", "Cada projeto começa pela decisão que precisa melhorar, não pelo produto que pode ser vendido."],
+  ["Dado com contexto", "Indicadores têm origem, regra e responsável claros para que a gestão confie na leitura."],
+  ["Adoção de verdade", "A solução só gera valor quando entra na rotina das pessoas que trabalham e decidem."],
+];
 
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-slate-950 py-16 text-white md:py-20">
+      <section className="bg-[#071827] py-16 text-white md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="[&_a]:text-slate-300 [&_span]:text-slate-300">
             <Breadcrumbs items={[{ label: "Sobre" }]} />
           </div>
-          <p className="text-sm font-semibold uppercase text-cyan-200">Sobre</p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-semibold md:text-5xl">
-            {company.brandName}: tecnologia orientada ao que o negócio precisa.
+          <p className="text-sm font-semibold uppercase text-teal-300">Sobre a Creativity</p>
+          <h1 className="mt-4 max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl">
+            Somos quem ativa o valor do ecossistema Microsoft que sua empresa já tem.
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
-            A Creativity atua em três frentes: Business Intelligence e dashboards, licenciamento
-            Microsoft e infraestrutura corporativa. Conectamos soluções Microsoft ao ecossistema
-            Ingram Micro, incluindo tecnologias Dell e Lenovo, para atender pequenas e médias
-            empresas com um único parceiro consultivo.
+            A Creativity é uma empresa brasileira de TI focada em BI, IA aplicada e adoção
+            Microsoft. Trabalhamos ao lado da gestão para transformar dado disperso em informação
+            confiável e tecnologia contratada em uso real.
           </p>
         </div>
       </section>
 
-      <TrustBar />
-
       <section className="bg-white py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[0.78fr_1.22fr] lg:px-8">
           <div>
-            <p className="text-sm font-semibold uppercase text-cyan-700">Posicionamento</p>
-            <h2 className="mt-3 text-3xl font-semibold text-slate-950">
-              Uma conversa para diferentes necessidades de tecnologia.
+            <p className="text-sm font-semibold uppercase text-teal-700">Nosso papel</p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#071827] sm:text-4xl">
+              Menos ferramenta isolada. Mais capacidade de decidir.
             </h2>
-            <p className="mt-4 text-base leading-8 text-slate-600">
-              O trabalho começa pelo diagnóstico do cenário. A partir dele, direcionamos projetos de
-              dados, licenças, nuvem, segurança, equipamentos ou infraestrutura com atendimento próximo.
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              Não atuamos como uma revenda que encerra a conversa na licença, nem como uma fábrica
+              de painéis decorativos. Conectamos dados, processos e pessoas para a solução resolver
+              uma necessidade concreta do negócio.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {values.map((value) => (
-              <div className="rounded-lg border border-slate-200 bg-slate-50 p-5" key={value.name}>
-                <h3 className="font-semibold text-slate-950">{value.name}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{value.description}</p>
+
+          <div className="border-t border-slate-200">
+            {principles.map(([title, description]) => (
+              <div className="grid gap-3 border-b border-slate-200 py-6 sm:grid-cols-[0.7fr_1.3fr]" key={title}>
+                <h3 className="flex gap-3 font-semibold text-slate-950">
+                  <CheckCircle2 aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-teal-700" />
+                  {title}
+                </h3>
+                <p className="text-sm leading-7 text-slate-600">{description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <CTASection title="Converse com a Creativity sobre a tecnologia da sua empresa." />
+      <section className="bg-slate-100 py-14">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+          <h2 className="max-w-2xl text-2xl font-semibold text-[#071827]">
+            Vamos começar pela decisão que sua empresa precisa tomar melhor.
+          </h2>
+          <Link
+            className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#071827] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0d2b3e]"
+            href="/#contato"
+          >
+            Fale com a gente
+            <ArrowRight aria-hidden className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
     </>
   );
 }
